@@ -1,0 +1,10 @@
+nltk
+scikit-learn
+matplotlib
+numpy
+pandas
+Sastrawi
+seaborn
+scikit-multilearn
+psycopg2
+appjar
