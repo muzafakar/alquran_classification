@@ -7,4 +7,5 @@ Sastrawi
 seaborn
 scikit-multilearn
 psycopg2
-appjar
+# use appjar if you want to create dekstop app
+# appjar
