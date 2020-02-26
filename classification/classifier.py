@@ -5,10 +5,7 @@ from sklearn.naive_bayes import MultinomialNB
 from sklearn.model_selection import KFold
 
 filename = "../data/quran_labelled.csv"
-df = pd.read_csv(filename)
-
-
-quran = Quran(df)
+quran = Quran(filename)
 # stat.multi_labelled_verse_count(True)
 # stat.count_verse_by_topic(True)
 

@@ -59,10 +59,9 @@ class Preprocessor:
 import pandas as pd
 
 if __name__ == '__main__':
-    header = ['chapter', 'verse', 'text', 'aqidah', 'akhlak', 'syariah', 'ilmu', 'kisah', 'dunia', 'ghaib', 'akhirat']
-    header2 = ['chapter', 'verse', 'text', 'prep', 'aqidah', 'akhlak', 'syariah', 'ilmu', 'kisah', 'dunia', 'ghaib',
-               'akhirat']
-    filename = "../data/quran_labelled.csv"
+    header = ['chapter', 'verse', 'text']
+    header2 = ['chapter', 'verse', 'text', 'prep']
+    filename = "../data/quran_unlabelled.csv"
     df = pd.read_csv(filename)
     prep = Preprocessor(df)
 
@@ -75,6 +74,6 @@ if __name__ == '__main__':
                 row['prep'] = " ".join(prep.preprocess(row[key]))
         new_data.append(row)
 
-    filename = "quran_labelled_prep.csv"
+    filename = "quran_unlabelled_prep.csv"
     data = pd.DataFrame(new_data)
     data.to_csv(filename, header=header2, index=False)

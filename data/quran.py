@@ -1,7 +1,10 @@
+import pandas as pd
+
+
 class Quran:
 
-    def __init__(self, dataframe):
-        self._df = dataframe
+    def __init__(self, filename: str):
+        self._df = pd.read_csv(filename)
         # self._prep = Preprocessor(dataframe)
         # self._count_vectorizer = CountVectorizer(dtype=np.int32)
         self._colors = ['#1f77b4', '#ff7f0e', '#2ca02c', '#d62728', '#9467bd',
@@ -55,25 +58,5 @@ class Quran:
     def verse_with_no_label(self):
         return self._df['text'].isnull().sum()
 
-    # def get_preprocessed(self):
-    #     """
-    #         features dan labels diekstrak dari dataframe
-    #         setiap feature akan diubah terlebih dahulu menjadi representasi
-    #         bag_of_words dengan count_vectorizer lalu diubah lagi ke dalam bentuk term_frequency
-    #         menggunakan tf_transformer, tujuannya agar TODO cari tau alasannya
-    #         :return:
-    #         berupa 2 array yang masing-masing merepresentasikan features dan labels
-    #         dalam bentuk matrix angka.
-    #         """
-    #     classes = self.get_topics()
-    #     labels = []
-    #     verses = []
-    #     for row in self._df.itertuples():
-    #         raw_verse = getattr(row, 'text')
-    #         prep_verse = self._prep.preprocess(raw_verse)
-    #         verses.append(prep_verse)
-    #         labels.append([getattr(row, c) for c in classes])
-    #
-    #     word_count = self._count_vectorizer.fit_transform(verses)
-    #     # features = tf_transformer.fit_transform(word_count)
-    #     return word_count.toarray(), np.array(labels)
+    def get_preprocessed(self):
+        return "null"
